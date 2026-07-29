@@ -1,0 +1,1233 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  25.7.0
+ |___|_|             
+
+User:   ags2235@ins011
+Date:   Thu Jul  9 21:54:32 2026
+Arch:   x86_64
+Pid:    3890878
+CWD:    /insomnia001/depts/friesner/users/ags2235/gpaw-graphite/no-sjm/with-sjm/with-li/larger-slab-in-x/a-a-stacked-from-LiC6/correct-geometry/lic6-with-one-ec-take-li-out/armchair-312/change-v/d--1.75/v-1.0
+Python: 3.11.14
+gpaw:   /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/gpaw
+_gpaw:  /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/
+        _gpaw.cpython-311-x86_64-linux-gnu.so
+ase:    /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/ase (version 3.26.0)
+numpy:  /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/numpy (version 2.3.4)
+scipy:  /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/scipy (version 1.16.3)
+libxc:  7.0.0
+units:  Angstrom and eV
+cores: 160
+OpenMP: True
+OMP_NUM_THREADS: 1
+
+Input parameters:
+  gpts: [ 32  64 352]
+  kpts: [2 3 1]
+  maxiter: 1000
+  mode: fd
+  occupations: {name: marzari-vanderbilt,
+                width: 0.2}
+  xc: PBE
+
+Non-default Solvated Jellium parameters:
+  target_potential: 1.0
+
+Implicit solvation parameters:
+Cavity:  EffectivePotentialCavity
+  Surface Calculator: GradientSurface with 3 nn
+  Volume Calculator: None
+  EffectivePotentialCavity
+    Potential: SJMPower12Potential
+      u0: 0.18eV
+      pbc_cutoff: 1e-06
+      tiny: 1e-10
+      H2O layer: False
+      Only solvate front side: True
+    temperature: 298.15K
+Dielectric:
+  Type: LinearDielectric
+  Solvent dielectric constant: 78.36
+Interaction: SurfaceInteraction
+  subscript: surf
+  Surface_tension: 0.0011484376791625194 eV/(Angstrom^2)
+
+Solvated jellium method (SJM) calculation:
+ Constant-potential mode.
+ Target potential: 1.00000 +/- 0.01000
+ Initial guess of excess electrons: 0.00000
+Attempt 0 to equilibrate potential to 1.000 +/- 0.010 V
+Current guess of excess electrons: +0.00000
+
+Jellium counter-charge defined with:
+ Bottom:  48.845 AA
+ Top:  69.845 AA
+ Charge: 0.0000
+
+Input parameters:
+  background_charge: {charge: 0.0,
+                      z1: 48.845364848560024,
+                      z2: 69.84536484856002}
+
+System changes: positions, numbers, cell, pbc, initial_charges, initial_magmoms 
+
+Initialize ...
+
+species:
+  C:
+    name: Carbon
+    id: 4aa54d4b901d75f77cc0ea3eec22967b
+    Z: 6.0
+    valence: 4
+    core: 2
+    charge: 0.0
+    file: /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/gpaw_data/setups/C.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.20,
+                           lmax: 2}
+    cutoffs: {filter: 1.14,
+              core: 1.14}
+    projectors:
+      #              energy  rcut
+      - 2s(2.00)   -13.751   0.635
+      - 2p(2.00)    -5.284   0.635
+      -  s          13.461   0.635
+      -  p          21.927   0.635
+      -  d           0.000   0.635
+  
+    # Using partial waves for C as LCAO basis
+
+  H:
+    name: Hydrogen
+    id: d65de229564ff8ea4db303e23b6d1ecf
+    Z: 1.0
+    valence: 1
+    core: 0
+    charge: 0.0
+    file: /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/gpaw_data/setups/H.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.15,
+                           lmax: 2}
+    cutoffs: {filter: 0.85,
+              core: 0.53}
+    projectors:
+      #              energy  rcut
+      - 1s(1.00)    -6.494   0.476
+      -  s          20.717   0.476
+      -  p           0.000   0.476
+  
+    # Using partial waves for H as LCAO basis
+
+  Li:
+    name: Lithium
+    id: 830b4218f175192f93f959cfc0aad614
+    Z: 3.0
+    valence: 1
+    core: 2
+    charge: 0.0
+    file: /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/gpaw_data/setups/Li.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.33,
+                           lmax: 2}
+    cutoffs: {filter: 1.91,
+              core: 2.55}
+    projectors:
+      #              energy  rcut
+      - 2s(1.00)    -2.874   1.058
+      - 2p(0.00)    -1.090   1.058
+      -  s          24.337   1.058
+  
+    # Using partial waves for Li as LCAO basis
+
+  O:
+    name: Oxygen
+    id: 32ecd46bf208036f09c70b0ec9a88b78
+    Z: 8.0
+    valence: 6
+    core: 2
+    charge: 0.0
+    file: /insomnia001/depts/friesner/projects/gpaw/conda_envs/gpaw/lib/python3.11/site-packages/gpaw_data/setups/O.PBE.gz
+    compensation charges: {type: gauss,
+                           rc: 0.21,
+                           lmax: 2}
+    cutoffs: {filter: 1.17,
+              core: 0.83}
+    projectors:
+      #              energy  rcut
+      - 2s(2.00)   -23.961   0.688
+      - 2p(4.00)    -9.029   0.598
+      -  s           3.251   0.688
+      -  p          18.182   0.598
+      -  d           0.000   0.619
+  
+    # Using partial waves for O as LCAO basis
+
+Reference energy: -124189.183028  # eV
+
+Spin-paired calculation
+
+Convergence criteria:
+ Maximum [total energy] change in last 3 cyles: 0.0005 eV / valence electron
+ Maximum integral of absolute [dens]ity change: 0.0001 electrons / valence electron
+ Maximum integral of absolute [eigenst]ate change: 4e-08 eV^2 / valence electron
+ Maximum change in the last 3 work functions [wkfxn]: 0.001 eV
+ Maximum number of scf [iter]ations: 1000
+ (Square brackets indicate name in SCF output, whereas a 'c' in
+ the SCF output indicates the quantity has converged.)
+
+Symmetries present (total): 1
+
+  ( 1  0  0)
+  ( 0  1  0)
+  ( 0  0  1)
+
+6 k-points: 2 x 3 x 1 Monkhorst-Pack grid
+3 k-points in the irreducible part of the Brillouin zone
+       k-points in crystal coordinates                weights
+   0:     0.25000000   -0.33333333    0.00000000          2/6
+   1:     0.25000000    0.00000000    0.00000000          2/6
+   2:     0.25000000    0.33333333    0.00000000          2/6
+
+Wave functions: Uniform real-space grid
+  Kinetic energy operator: 6*3+1=19 point O(h^6) finite-difference Laplacian
+  ScaLapack parameters: grid=1x1, blocksize=None
+  Wavefunction extrapolation:
+    Improved wavefunction reuse through dual PAW basis 
+
+Occupation numbers: Marzari-Vanderbilt:
+  width: 0.2000  # eV
+ 
+
+Eigensolver
+   Davidson(niter=2) 
+
+Densities:
+  Coarse grid: 32*64*352 grid
+  Fine grid: 64*128*704 grid
+  Total Charge: 0.000000 
+
+Density mixing:
+  Method: separate
+  Backend: pulay
+  Linear mixing parameter: 0.05
+  old densities: 5
+  Damping of long wavelength oscillations: 50 
+
+XC parameters: PBE with 2 nearest neighbor stencil
+
+Memory estimate:
+  Process memory now: 223.51 MiB
+  Calculator: 107.48 MiB
+    Density: 1.88 MiB
+      Arrays: 0.89 MiB
+      Localized functions: 0.66 MiB
+      Mixer: 0.33 MiB
+    Hamiltonian: 8.41 MiB
+      Arrays: 0.58 MiB
+      XC: 0.00 MiB
+      Poisson: 0.66 MiB
+      vbar: 0.05 MiB
+      Solvation: 7.11 MiB
+    Wavefunctions: 97.20 MiB
+      Arrays psit_nG: 61.56 MiB
+      Eigensolver: 35.43 MiB
+      Projections: 0.15 MiB
+      Projectors: 0.06 MiB
+
+Total number of cores used: 160
+Domain decomposition: 2 x 4 x 20
+
+Number of atoms: 160
+Number of atomic orbitals: 556
+Number of bands in calculation: 309
+Number of valence electrons: 508.0
+Bands to converge: occupied
+
+... initialized
+
+Initializing position-dependent things.
+
+Solvation position-dependent initialization:
+  Atomic radii for SJMPower12Potential:
+    Type    Radius   No. of atoms
+       H     1.200     28
+       O     1.520     3
+       C     1.700     111
+      Li     1.820     18
+
+Density initialized from atomic densities
+Creating initial wave functions:
+  309 bands from LCAO basis set
+
+         .-----------------.  
+        /|                 |  
+       / |                 |  
+      /  |                 |  
+     /   |                 |  
+    /    |                 |  
+   /     |                 |  
+  /      |                 |  
+ *       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |             H   |  
+ |       |                H|  
+ |       |                 |  
+ |       C               O |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |H      |                 |  
+ | C H   |                 |  
+ |       |                 |  
+ | O     |                 |  
+ |       |   H        H    |  
+ |       |                 |  
+ O       | H C      H C    |  
+ |       |H CC     H CC    |  
+ |       |C        C       |  
+ |       H C C    H C C    |  
+ |      H|C CC   H C CC    |  
+ |    HC CC    HC CC       |  
+ |    C CC C C C CC C C    |  
+ |  Li   |C CLi    C CC    |  
+ Li   CCLC     CCLC        |  
+ |    C CCCC C C CCCC C    |  
+ |       |LiCC     C CC    |  
+ |   LCC C    LCC C        |  
+ |    C C|CC C C C CC C    |  
+ |Li     CCLiH    CC CH    |  
+ |    CC C H   CC C H      |  
+ |    C C|C    C C C       |  
+ |  Li   CH  Li   CH       |  
+ |    CC H     CC H        |  
+ |    C H|     C H         |  
+ Li      |Li               |  
+ |    H  |     H           |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       |                 |  
+ |       .-----------------.  
+ |      /                 /   
+ |     /                 /    
+ |    /                 /     
+ |   /                 /      
+ |  /                 /       
+ | /                 /        
+ |/                 /         
+ *-----------------*          
+
+Atomic positions and initial magnetic moments
+
+Positions:
+   0 C      1.872684    0.721017   27.193726    ( 0.0000,  0.0000,  0.0000)
+   1 C      1.872684    2.881259   25.944887    ( 0.0000,  0.0000,  0.0000)
+   2 C      1.872684   11.529252   28.440131    ( 0.0000,  0.0000,  0.0000)
+   3 C      1.872684    1.440630   28.440131    ( 0.0000,  0.0000,  0.0000)
+   4 C      1.872684    1.442035   25.944887    ( 0.0000,  0.0000,  0.0000)
+   5 C      1.872684   12.248864   27.193726    ( 0.0000,  0.0000,  0.0000)
+   6 C      5.618052    0.721017   27.193726    ( 0.0000,  0.0000,  0.0000)
+   7 C      5.618052    2.881259   25.944887    ( 0.0000,  0.0000,  0.0000)
+   8 C      5.618052   11.529252   28.440131    ( 0.0000,  0.0000,  0.0000)
+   9 C      5.618052    1.440630   28.440131    ( 0.0000,  0.0000,  0.0000)
+  10 C      5.618052    1.442035   25.944887    ( 0.0000,  0.0000,  0.0000)
+  11 C      5.618052   12.248864   27.193726    ( 0.0000,  0.0000,  0.0000)
+  12 C      1.872684    5.044311   27.193726    ( 0.0000,  0.0000,  0.0000)
+  13 C      1.872684    7.204553   25.944887    ( 0.0000,  0.0000,  0.0000)
+  14 C      1.872684    2.882664   28.440131    ( 0.0000,  0.0000,  0.0000)
+  15 C      1.872684    5.763923   28.440131    ( 0.0000,  0.0000,  0.0000)
+  16 C      1.872684    5.765328   25.944887    ( 0.0000,  0.0000,  0.0000)
+  17 C      1.872684    3.602276   27.193726    ( 0.0000,  0.0000,  0.0000)
+  18 C      5.618052    5.044311   27.193726    ( 0.0000,  0.0000,  0.0000)
+  19 C      5.618052    7.204553   25.944887    ( 0.0000,  0.0000,  0.0000)
+  20 C      5.618052    2.882664   28.440131    ( 0.0000,  0.0000,  0.0000)
+  21 C      5.618052    5.763923   28.440131    ( 0.0000,  0.0000,  0.0000)
+  22 C      5.618052    5.765328   25.944887    ( 0.0000,  0.0000,  0.0000)
+  23 C      5.618052    3.602276   27.193726    ( 0.0000,  0.0000,  0.0000)
+  24 C      1.872684    9.367605   27.193726    ( 0.0000,  0.0000,  0.0000)
+  25 C      1.872684   11.527847   25.944887    ( 0.0000,  0.0000,  0.0000)
+  26 C      1.872684    7.205958   28.440131    ( 0.0000,  0.0000,  0.0000)
+  27 C      1.872684   10.087217   28.440131    ( 0.0000,  0.0000,  0.0000)
+  28 C      1.872684   10.088622   25.944887    ( 0.0000,  0.0000,  0.0000)
+  29 C      1.872684    7.925570   27.193726    ( 0.0000,  0.0000,  0.0000)
+  30 C      5.618052    9.367605   27.193726    ( 0.0000,  0.0000,  0.0000)
+  31 C      5.618052   11.527847   25.944887    ( 0.0000,  0.0000,  0.0000)
+  32 C      5.618052    7.205958   28.440131    ( 0.0000,  0.0000,  0.0000)
+  33 C      5.618052   10.087217   28.440131    ( 0.0000,  0.0000,  0.0000)
+  34 C      5.618052   10.088622   25.944887    ( 0.0000,  0.0000,  0.0000)
+  35 C      5.618052    7.925570   27.193726    ( 0.0000,  0.0000,  0.0000)
+  36 C      1.872684   11.529252   30.937808    ( 0.0000,  0.0000,  0.0000)
+  37 C      1.872684    0.719612   29.688969    ( 0.0000,  0.0000,  0.0000)
+  38 C      1.872684    9.367605   32.184213    ( 0.0000,  0.0000,  0.0000)
+  39 C      1.872684   12.248864   32.184213    ( 0.0000,  0.0000,  0.0000)
+  40 C      1.872684   12.250269   29.688969    ( 0.0000,  0.0000,  0.0000)
+  41 C      1.872684   10.087217   30.937808    ( 0.0000,  0.0000,  0.0000)
+  42 C      5.618052   11.529252   30.937808    ( 0.0000,  0.0000,  0.0000)
+  43 C      5.618052    0.719612   29.688969    ( 0.0000,  0.0000,  0.0000)
+  44 C      5.618052    9.367605   32.184213    ( 0.0000,  0.0000,  0.0000)
+  45 C      5.618052   12.248864   32.184213    ( 0.0000,  0.0000,  0.0000)
+  46 C      5.618052   12.250269   29.688969    ( 0.0000,  0.0000,  0.0000)
+  47 C      5.618052   10.087217   30.937808    ( 0.0000,  0.0000,  0.0000)
+  48 C      1.872684    2.882664   30.937808    ( 0.0000,  0.0000,  0.0000)
+  49 C      1.872684    5.042906   29.688969    ( 0.0000,  0.0000,  0.0000)
+  50 C      1.872684    0.721017   32.184213    ( 0.0000,  0.0000,  0.0000)
+  51 C      1.872684    3.602276   32.184213    ( 0.0000,  0.0000,  0.0000)
+  52 C      1.872684    3.603682   29.688969    ( 0.0000,  0.0000,  0.0000)
+  53 C      1.872684    1.440630   30.937808    ( 0.0000,  0.0000,  0.0000)
+  54 C      5.618052    2.882664   30.937808    ( 0.0000,  0.0000,  0.0000)
+  55 C      5.618052    5.042906   29.688969    ( 0.0000,  0.0000,  0.0000)
+  56 C      5.618052    0.721017   32.184213    ( 0.0000,  0.0000,  0.0000)
+  57 C      5.618052    3.602276   32.184213    ( 0.0000,  0.0000,  0.0000)
+  58 C      5.618052    3.603682   29.688969    ( 0.0000,  0.0000,  0.0000)
+  59 C      5.618052    1.440630   30.937808    ( 0.0000,  0.0000,  0.0000)
+  60 C      1.872684    7.205958   30.937808    ( 0.0000,  0.0000,  0.0000)
+  61 C      1.872684    9.366200   29.688969    ( 0.0000,  0.0000,  0.0000)
+  62 C      1.872684    5.044311   32.184213    ( 0.0000,  0.0000,  0.0000)
+  63 C      1.872684    7.925570   32.184213    ( 0.0000,  0.0000,  0.0000)
+  64 C      1.872684    7.926975   29.688969    ( 0.0000,  0.0000,  0.0000)
+  65 C      1.872684    5.763923   30.937808    ( 0.0000,  0.0000,  0.0000)
+  66 C      5.618052    7.205958   30.937808    ( 0.0000,  0.0000,  0.0000)
+  67 C      5.618052    9.366200   29.688969    ( 0.0000,  0.0000,  0.0000)
+  68 C      5.618052    5.044311   32.184213    ( 0.0000,  0.0000,  0.0000)
+  69 C      5.618052    7.925570   32.184213    ( 0.0000,  0.0000,  0.0000)
+  70 C      5.618052    7.926975   29.688969    ( 0.0000,  0.0000,  0.0000)
+  71 C      5.618052    5.763923   30.937808    ( 0.0000,  0.0000,  0.0000)
+  72 C      1.872684    9.367605   34.681890    ( 0.0000,  0.0000,  0.0000)
+  73 C      1.872684   11.527847   33.433052    ( 0.0000,  0.0000,  0.0000)
+  74 C      1.872684    7.205958   35.928295    ( 0.0000,  0.0000,  0.0000)
+  75 C      1.872684   10.087217   35.928295    ( 0.0000,  0.0000,  0.0000)
+  76 C      1.872684   10.088622   33.433052    ( 0.0000,  0.0000,  0.0000)
+  77 C      1.872684    7.925570   34.681890    ( 0.0000,  0.0000,  0.0000)
+  78 C      5.618052    9.367605   34.681890    ( 0.0000,  0.0000,  0.0000)
+  79 C      5.618052   11.527847   33.433052    ( 0.0000,  0.0000,  0.0000)
+  80 C      5.618052    7.205958   35.928295    ( 0.0000,  0.0000,  0.0000)
+  81 C      5.618052   10.087217   35.928295    ( 0.0000,  0.0000,  0.0000)
+  82 C      5.618052   10.088622   33.433052    ( 0.0000,  0.0000,  0.0000)
+  83 C      5.618052    7.925570   34.681890    ( 0.0000,  0.0000,  0.0000)
+  84 C      1.872684    0.721017   34.681890    ( 0.0000,  0.0000,  0.0000)
+  85 C      1.872684    2.881259   33.433052    ( 0.0000,  0.0000,  0.0000)
+  86 C      1.872684   11.529252   35.928295    ( 0.0000,  0.0000,  0.0000)
+  87 C      1.872684    1.440630   35.928295    ( 0.0000,  0.0000,  0.0000)
+  88 C      1.872684    1.442035   33.433052    ( 0.0000,  0.0000,  0.0000)
+  89 C      1.872684   12.248864   34.681890    ( 0.0000,  0.0000,  0.0000)
+  90 C      5.618052    0.721017   34.681890    ( 0.0000,  0.0000,  0.0000)
+  91 C      5.618052    2.881259   33.433052    ( 0.0000,  0.0000,  0.0000)
+  92 C      5.618052   11.529252   35.928295    ( 0.0000,  0.0000,  0.0000)
+  93 C      5.618052    1.440630   35.928295    ( 0.0000,  0.0000,  0.0000)
+  94 C      5.618052    1.442035   33.433052    ( 0.0000,  0.0000,  0.0000)
+  95 C      5.618052   12.248864   34.681890    ( 0.0000,  0.0000,  0.0000)
+  96 C      1.872684    5.044311   34.681890    ( 0.0000,  0.0000,  0.0000)
+  97 C      1.872684    7.204553   33.433052    ( 0.0000,  0.0000,  0.0000)
+  98 C      1.872684    2.882664   35.928295    ( 0.0000,  0.0000,  0.0000)
+  99 C      1.872684    5.763923   35.928295    ( 0.0000,  0.0000,  0.0000)
+ 100 C      1.872684    5.765328   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 101 C      1.872684    3.602276   34.681890    ( 0.0000,  0.0000,  0.0000)
+ 102 C      5.618052    5.044311   34.681890    ( 0.0000,  0.0000,  0.0000)
+ 103 C      5.618052    7.204553   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 104 C      5.618052    2.882664   35.928295    ( 0.0000,  0.0000,  0.0000)
+ 105 C      5.618052    5.763923   35.928295    ( 0.0000,  0.0000,  0.0000)
+ 106 C      5.618052    5.765328   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 107 C      5.618052    3.602276   34.681890    ( 0.0000,  0.0000,  0.0000)
+ 108 C     -0.460847   -0.609281   45.223830    ( 0.0000,  0.0000,  0.0000)
+ 109 C      0.504004    0.583021   45.222469    ( 0.0000,  0.0000,  0.0000)
+ 110 C      0.008628   -0.004501   43.065719    ( 0.0000,  0.0000,  0.0000)
+ 111 H      1.872684    3.424664   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 112 H      1.872684    0.898630   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 113 H      5.618052    3.424664   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 114 H      5.618052    0.898630   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 115 H      1.872684    7.747958   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 116 H      1.872684    5.221924   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 117 H      5.618052    7.747958   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 118 H      5.618052    5.221924   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 119 H      1.872684   12.071251   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 120 H      1.872684    9.545218   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 121 H      5.618052   12.071251   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 122 H      5.618052    9.545218   25.000000    ( 0.0000,  0.0000,  0.0000)
+ 123 H      1.872684    7.752552   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 124 H      1.872684    9.540623   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 125 H      5.618052    7.752552   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 126 H      5.618052    9.540623   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 127 H      1.872684   12.075846   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 128 H      1.872684    0.894036   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 129 H      5.618052   12.075846   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 130 H      5.618052    0.894036   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 131 H      1.872684    3.429258   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 132 H      1.872684    5.217330   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 133 H      5.618052    3.429258   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 134 H      5.618052    5.217330   36.871341    ( 0.0000,  0.0000,  0.0000)
+ 135 H     -0.120887   -1.450732   45.836128    ( 0.0000,  0.0000,  0.0000)
+ 136 H     -1.484825   -0.328701   45.508219    ( 0.0000,  0.0000,  0.0000)
+ 137 H      0.173464    1.420208   45.845365    ( 0.0000,  0.0000,  0.0000)
+ 138 H      1.530595    0.299251   45.492860    ( 0.0000,  0.0000,  0.0000)
+ 139 Li     0.000000    0.000000   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 140 Li     3.745368    0.000000   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 141 Li     0.000000    4.323294   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 142 Li     3.745368    4.323294   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 143 Li     0.000000    8.646588   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 144 Li     3.745368    8.646588   25.944887    ( 0.0000,  0.0000,  0.0000)
+ 145 Li     0.000000   10.808235   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 146 Li     3.745368   10.808235   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 147 Li     0.000000    2.161647   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 148 Li     3.745368    2.161647   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 149 Li     0.000000    6.484941   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 150 Li     3.745368    6.484941   29.688969    ( 0.0000,  0.0000,  0.0000)
+ 151 Li     0.000000    8.646588   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 152 Li     3.745368    8.646588   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 153 Li     3.745368    0.000000   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 154 Li     0.000000    4.323294   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 155 Li     3.745368    4.323294   33.433052    ( 0.0000,  0.0000,  0.0000)
+ 156 Li     0.000000    0.000000   35.117624    ( 0.0000,  0.0000,  0.0000)
+ 157 O      0.000000    0.000000   41.871341    ( 0.0000,  0.0000,  0.0000)
+ 158 O     -0.467239   -1.023114   43.845858    ( 0.0000,  0.0000,  0.0000)
+ 159 O      0.495328    1.007604   43.847617    ( 0.0000,  0.0000,  0.0000)
+
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.490736    0.000000    0.000000    32     0.2341
+  2. axis:    yes    0.000000   12.969881    0.000000    64     0.2027
+  3. axis:    no     0.000000    0.000000   70.845365   352     0.2013
+
+  Lengths:   7.490736  12.969881  70.845365
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2121
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens  wkfxn
+iter:   1 21:54:49 -1246.540007    +nan
+iter:   2 21:54:58 -1234.546940   +0.17  -0.78
+iter:   3 21:55:06 -1226.124082   -0.40  -0.81  +0.42
+iter:   4 21:55:16 -1194.284003   +0.25  -0.83  +0.72
+iter:   5 21:55:24 -1179.106481   +0.04  -1.08  +0.72
+iter:   6 21:55:33 -1176.745364   -0.83  -1.23  +0.46
+iter:   7 21:55:41 -1176.324292   -0.62  -1.29  +0.34
+iter:   8 21:55:50 -1180.445995   -0.73  -1.39  +0.31
+iter:   9 21:55:58 -1176.453281   -0.63  -1.40  +0.40
+iter:  10 21:56:06 -1175.382740   -1.31  -1.72  +0.40
+iter:  11 21:56:14 -1174.926353   -1.24  -1.81  +0.13
+iter:  12 21:56:22 -1174.930852   -1.51  -1.95  -0.17
+iter:  13 21:56:30 -1174.819946c  -2.20  -2.19  -0.39
+iter:  14 21:56:38 -1174.829933c  -1.79  -2.26  -0.16
+iter:  15 21:56:46 -1174.739376c  -2.22  -2.33  -0.34
+iter:  16 21:56:54 -1174.743315c  -2.20  -2.53  -0.40
+iter:  17 21:57:02 -1174.729871c  -2.70  -2.60  -0.71
+iter:  18 21:57:09 -1174.732153c  -2.72  -2.80  -0.71
+iter:  19 21:57:17 -1174.725677c  -3.30  -2.92  -1.07
+iter:  20 21:57:25 -1174.724958c  -3.82  -3.09  -1.07
+iter:  21 21:57:33 -1174.726317c  -3.94  -3.17  -1.46
+iter:  22 21:57:40 -1174.725029c  -4.52  -3.26  -1.89
+iter:  23 21:57:48 -1174.723815c  -4.68  -3.31  -1.67
+iter:  24 21:57:56 -1174.725417c  -4.85  -3.41  -1.67
+iter:  25 21:58:04 -1174.725004c  -5.09  -3.54  -1.84
+iter:  26 21:58:11 -1174.725600c  -5.28  -3.68  -1.99
+iter:  27 21:58:19 -1174.726122c  -5.43  -3.82  -2.23
+iter:  28 21:58:27 -1174.725138c  -5.50  -4.03c -2.16
+iter:  29 21:58:35 -1174.725962c  -5.90  -4.05c -2.37
+iter:  30 21:58:42 -1174.725276c  -6.35  -4.18c -3.22c
+iter:  31 21:58:50 -1174.725122c  -6.32  -4.23c -2.76
+iter:  32 21:58:58 -1174.725825c  -6.38  -4.24c -2.52
+iter:  33 21:59:05 -1174.726079c  -6.57  -4.40c -2.61
+iter:  34 21:59:13 -1174.725494c  -6.83  -4.36c -2.84
+iter:  35 21:59:21 -1174.725059c  -6.99  -4.65c -2.76
+iter:  36 21:59:29 -1174.725522c  -7.23  -4.78c -3.55c
+iter:  37 21:59:36 -1174.725912c  -7.30  -4.87c -3.18c
+iter:  38 21:59:44 -1174.725378c  -7.72c -4.87c -3.20c
+
+Converged after 38 iterations.
+
+Dipole moment: (-8.973586, 0.754068, 1.344377) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -124189.183028)
+
+Kinetic:       +1088.245067
+Potential:     -1126.111690
+External:        +0.000000
+XC:            -1159.982250
+Entropy (-ST):   -0.068057
+Local:          +22.893359
+Interactions  
+ surf:           +0.298192
+--------------------------
+Free energy:   -1174.725378
+Extrapolated:  -1174.725378
+
+Dipole-layer corrected work functions: 1.632178, 2.780352 eV
+
+Solvation cavity surface area: 259.64973
+Solvation cavity volume: not calculated (no calculator defined)
+
+Legendre-transformed energies (grand potential, Omega = E - N mu)
+ N (excess electrons):    +0.000000
+ mu (-workfunction, eV):   -2.780352
+ (Grand) free energy:   -1174.725378
+ (Grand) extrapolated:  -1174.725378
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0   252     -2.28899    1.41016
+  0   253     -2.23330    0.99391
+  0   254     -2.13947    0.41085
+  0   255     -2.01543    0.06931
+
+  1   252     -2.40072    2.03606
+  1   253     -2.30981    1.55860
+  1   254     -2.25463    1.15311
+  1   255     -2.21359    0.85202
+
+
+Fermi level: -2.20627
+
+No gap
+No difference between direct/indirect transitions
+
+Potential found to be 2.78035 V (with +0.00000 excess electrons, attempt 0/10).
+No slope provided, guessing a slope of -1.6491 corresponding
+to an apparent capacitance of 10 muF/cm^2.
+Number of electrons changed to 1.0796 based on slope of -1.6491 V/electron.
+Attempt 1 to equilibrate potential to 1.000 +/- 0.010 V
+Current guess of excess electrons: +1.07957
+
+Jellium counter-charge defined with:
+ Bottom:  48.845 AA
+ Top:  69.845 AA
+ Charge: 1.0796
+
+Density initialized from wave functions
+Number of valence electrons is now 509.07957
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.490736    0.000000    0.000000    32     0.2341
+  2. axis:    yes    0.000000   12.969881    0.000000    64     0.2027
+  3. axis:    no     0.000000    0.000000   70.845365   352     0.2013
+
+  Lengths:   7.490736  12.969881  70.845365
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2121
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens  wkfxn
+iter:   1 21:59:53 -1292.311605   +0.48
+iter:   2 22:00:01 -1348.747046   +0.74  -0.92
+iter:   3 22:00:10 -1182.272525   -0.69  -0.85  +1.06
+iter:   4 22:00:18 -1177.817307   -0.92  -1.59  +0.81
+iter:   5 22:00:26 -1176.593128   -0.95  -1.86  +0.04
+iter:   6 22:00:34 -1176.635113   -1.20  -2.21  -0.30
+iter:   7 22:00:42 -1176.540897c  -1.11  -2.26  -0.45
+iter:   8 22:00:50 -1176.582306c  -1.19  -2.28  -0.41
+iter:   9 22:00:58 -1176.619030c  -1.41  -2.34  -1.01
+iter:  10 22:01:06 -1176.645716c  -1.70  -2.40  -0.99
+iter:  11 22:01:14 -1176.671791c  -1.85  -2.50  -0.82
+iter:  12 22:01:22 -1176.699438c  -1.78  -2.62  -0.72
+iter:  13 22:01:30 -1176.724291c  -2.10  -2.67  -0.99
+iter:  14 22:01:38 -1176.735544c  -2.12  -2.71  -1.15
+iter:  15 22:01:46 -1176.754904c  -2.28  -2.82  -1.14
+iter:  16 22:01:54 -1176.762919c  -2.40  -2.96  -1.16
+iter:  17 22:02:02 -1176.769305c  -2.56  -3.03  -2.16
+iter:  18 22:02:10 -1176.774691c  -2.74  -3.09  -1.40
+iter:  19 22:02:17 -1176.778623c  -2.76  -3.32  -1.43
+iter:  20 22:02:25 -1176.783175c  -2.91  -3.44  -1.65
+iter:  21 22:02:33 -1176.783741c  -3.05  -3.50  -1.73
+iter:  22 22:02:41 -1176.785428c  -3.08  -3.56  -1.90
+iter:  23 22:02:48 -1176.787760c  -3.30  -3.60  -2.27
+iter:  24 22:02:56 -1176.788737c  -3.39  -3.65  -2.06
+iter:  25 22:03:04 -1176.789569c  -3.49  -3.71  -1.80
+iter:  26 22:03:12 -1176.790674c  -3.64  -3.88  -1.91
+iter:  27 22:03:20 -1176.791199c  -3.62  -4.07c -2.01
+iter:  28 22:03:27 -1176.791380c  -3.73  -4.10c -2.57
+iter:  29 22:03:35 -1176.791621c  -3.90  -4.20c -2.65
+iter:  30 22:03:43 -1176.791876c  -3.91  -4.22c -2.72
+iter:  31 22:03:50 -1176.791998c  -4.18  -4.24c -2.80
+iter:  32 22:03:58 -1176.792061c  -4.23  -4.23c -2.99
+iter:  33 22:04:06 -1176.792159c  -4.31  -4.21c -3.06c
+iter:  34 22:04:13 -1176.792243c  -4.40  -4.19c -2.85
+iter:  35 22:04:21 -1176.792319c  -4.54  -4.11c -2.79
+iter:  36 22:04:29 -1176.792329c  -4.58  -4.09c -3.09c
+iter:  37 22:04:36 -1176.792525c  -4.66  -4.07c -3.53c
+iter:  38 22:04:44 -1176.792470c  -4.72  -4.06c -3.16c
+iter:  39 22:04:52 -1176.792564c  -4.84  -4.04c -3.08c
+iter:  40 22:05:00 -1176.792457c  -4.94  -4.06c -2.89
+iter:  41 22:05:07 -1176.792562c  -5.09  -4.00c -2.89
+iter:  42 22:05:15 -1176.792938c  -5.19  -3.96  -2.76
+iter:  43 22:05:23 -1176.792658c  -5.26  -4.06c -2.76
+iter:  44 22:05:30 -1176.792638c  -5.36  -4.12c -2.81
+iter:  45 22:05:38 -1176.792942c  -5.56  -4.15c -3.02c
+iter:  46 22:05:46 -1176.793102c  -5.57  -4.23c -2.66
+iter:  47 22:05:53 -1176.792998c  -5.87  -4.23c -2.54
+iter:  48 22:06:01 -1176.792691c  -5.89  -4.27c -2.57
+iter:  49 22:06:09 -1176.792981c  -6.15  -4.42c -2.87
+iter:  50 22:06:17 -1176.792841c  -6.18  -4.43c -2.93
+iter:  51 22:06:24 -1176.792693c  -6.18  -4.48c -3.69c
+iter:  52 22:06:32 -1176.792980c  -6.42  -4.51c -3.33c
+iter:  53 22:06:40 -1176.792989c  -6.54  -4.54c -2.99
+iter:  54 22:06:47 -1176.792946c  -6.60  -4.65c -3.17c
+iter:  55 22:06:55 -1176.793077c  -6.68  -4.74c -3.20c
+iter:  56 22:07:03 -1176.793043c  -6.97  -4.93c -3.24c
+iter:  57 22:07:10 -1176.792957c  -6.95  -4.99c -3.23c
+iter:  58 22:07:18 -1176.793070c  -7.20  -4.97c -3.37c
+iter:  59 22:07:26 -1176.793137c  -7.17  -5.11c -4.22c
+iter:  60 22:07:33 -1176.792878c  -7.32  -5.10c -3.56c
+iter:  61 22:07:41 -1176.793002c  -7.40c -4.94c -3.54c
+
+Converged after 61 iterations.
+
+Dipole moment: (-8.984051, 0.741525, 26.008150) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -124189.183028)
+
+Kinetic:       +1095.313509
+Potential:     -1127.404409
+External:        +0.000000
+XC:            -1167.930987
+Entropy (-ST):   -0.002453
+Local:          +22.933146
+Interactions  
+ surf:           +0.298192
+--------------------------
+Free energy:   -1176.793002
+Extrapolated:  -1176.793002
+
+Dipole-layer corrected work functions: 1.643548, 1.169384 eV
+
+Solvation cavity surface area: 259.64973
+Solvation cavity volume: not calculated (no calculator defined)
+
+Legendre-transformed energies (grand potential, Omega = E - N mu)
+ N (excess electrons):    +1.079567
+ mu (-workfunction, eV):   -1.169384
+ (Grand) free energy:   -1175.530574
+ (Grand) extrapolated:  -1175.530574
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0   252     -1.52260    1.64335
+  0   253     -1.43914    1.03561
+  0   254     -1.37173    0.58019
+  0   255     -1.29270    0.22780
+
+  1   252     -1.62446    2.10090
+  1   253     -1.58589    1.98144
+  1   254     -1.51285    1.57808
+  1   255     -1.50051    1.49199
+
+
+Fermi level: -1.40647
+
+No gap
+No difference between direct/indirect transitions
+
+Potential found to be 1.16938 V (with +1.07957 excess electrons, attempt 1/10).
+Slope regressed from last 2 attempts is -1.4922 V/electron,
+or apparent capacitance of 11.0513 muF/cm^2
+After mixing with 0.50, new slope is -1.5707 V/electron.
+Number of electrons changed to 1.1874 based on slope of -1.5707 V/electron.
+Attempt 2 to equilibrate potential to 1.000 +/- 0.010 V
+Current guess of excess electrons: +1.18741
+
+Jellium counter-charge defined with:
+ Bottom:  48.845 AA
+ Top:  69.845 AA
+ Charge: 1.1874
+
+Density initialized from wave functions
+Number of valence electrons is now 509.18741
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.490736    0.000000    0.000000    32     0.2341
+  2. axis:    yes    0.000000   12.969881    0.000000    64     0.2027
+  3. axis:    no     0.000000    0.000000   70.845365   352     0.2013
+
+  Lengths:   7.490736  12.969881  70.845365
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2121
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens  wkfxn
+iter:   1 22:07:49 -1177.773542   -2.52
+iter:   2 22:07:57 -1178.227643   -2.15  -1.98
+iter:   3 22:08:05 -1176.916658   -2.89  -1.90  -0.05
+iter:   4 22:08:13 -1176.912383   -3.41  -2.92  -0.28
+iter:   5 22:08:21 -1176.913694c  -3.48  -3.06  -1.12
+iter:   6 22:08:28 -1176.911050c  -3.40  -3.10  -1.32
+iter:   7 22:08:36 -1176.911708c  -3.85  -3.48  -2.00
+iter:   8 22:08:44 -1176.912515c  -4.42  -3.56  -1.68
+iter:   9 22:08:52 -1176.911774c  -4.36  -3.51  -1.92
+iter:  10 22:08:59 -1176.911816c  -4.78  -3.90  -2.44
+iter:  11 22:09:07 -1176.911776c  -5.11  -4.00  -2.70
+iter:  12 22:09:14 -1176.911921c  -5.37  -4.02c -2.84
+iter:  13 22:09:22 -1176.912140c  -5.50  -4.13c -2.76
+iter:  14 22:09:30 -1176.912244c  -5.64  -4.28c -2.51
+iter:  15 22:09:37 -1176.912236c  -5.89  -4.39c -2.70
+iter:  16 22:09:45 -1176.911975c  -6.19  -4.50c -3.05c
+iter:  17 22:09:52 -1176.912261c  -6.25  -4.62c -3.06c
+iter:  18 22:10:00 -1176.912288c  -6.45  -4.78c -2.86
+iter:  19 22:10:08 -1176.912170c  -6.59  -4.77c -3.18c
+iter:  20 22:10:15 -1176.912028c  -6.68  -4.95c -3.00
+iter:  21 22:10:23 -1176.912138c  -6.82  -4.93c -3.46c
+iter:  22 22:10:30 -1176.912088c  -7.02  -5.11c -3.69c
+iter:  23 22:10:38 -1176.912046c  -7.06  -5.19c -3.61c
+iter:  24 22:10:45 -1176.912102c  -7.15  -5.32c -3.97c
+iter:  25 22:10:53 -1176.912104c  -7.35  -5.43c -4.12c
+iter:  26 22:11:00 -1176.912069c  -7.48c -5.53c -3.92c
+
+Converged after 26 iterations.
+
+Dipole moment: (-8.984336, 0.740740, 28.458435) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -124189.183028)
+
+Kinetic:       +1095.961736
+Potential:     -1127.430764
+External:        +0.000000
+XC:            -1168.682214
+Entropy (-ST):   +0.004289
+Local:          +22.936692
+Interactions  
+ surf:           +0.298192
+--------------------------
+Free energy:   -1176.912069
+Extrapolated:  -1176.912069
+
+Dipole-layer corrected work functions: 1.644611, 1.020531 eV
+
+Solvation cavity surface area: 259.64973
+Solvation cavity volume: not calculated (no calculator defined)
+
+Legendre-transformed energies (grand potential, Omega = E - N mu)
+ N (excess electrons):    +1.187408
+ mu (-workfunction, eV):   -1.020531
+ (Grand) free energy:   -1175.700283
+ (Grand) extrapolated:  -1175.700283
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0   252     -1.45213    1.66554
+  0   253     -1.36607    1.04167
+  0   254     -1.30475    0.62134
+  0   255     -1.22365    0.24324
+
+  1   252     -1.55251    2.10516
+  1   253     -1.52254    2.02084
+  1   254     -1.44976    1.65018
+  1   255     -1.42877    1.50725
+
+
+Fermi level: -1.33257
+
+No gap
+No difference between direct/indirect transitions
+
+Potential found to be 1.02053 V (with +1.18741 excess electrons, attempt 2/10).
+Slope regressed from last 3 attempts is -1.4862 V/electron,
+or apparent capacitance of 11.0962 muF/cm^2
+After mixing with 0.50, new slope is -1.5284 V/electron.
+Number of electrons changed to 1.2008 based on slope of -1.5284 V/electron.
+Attempt 3 to equilibrate potential to 1.000 +/- 0.010 V
+Current guess of excess electrons: +1.20084
+
+Jellium counter-charge defined with:
+ Bottom:  48.845 AA
+ Top:  69.845 AA
+ Charge: 1.2008
+
+Density initialized from wave functions
+Number of valence electrons is now 509.20084
+Unit cell:
+           periodic     x           y           z      points  spacing
+  1. axis:    yes    7.490736    0.000000    0.000000    32     0.2341
+  2. axis:    yes    0.000000   12.969881    0.000000    64     0.2027
+  3. axis:    no     0.000000    0.000000   70.845365   352     0.2013
+
+  Lengths:   7.490736  12.969881  70.845365
+  Angles:   90.000000  90.000000  90.000000
+
+Effective grid spacing dv^(1/3) = 0.2121
+
+     iter     time        total  log10-change:
+                         energy   eigst   dens  wkfxn
+iter:   1 22:11:08 -1176.932907   -4.42
+iter:   2 22:11:16 -1176.945978   -4.05  -2.91
+iter:   3 22:11:24 -1176.926075c  -4.65  -2.86  -1.01
+iter:   4 22:11:32 -1176.925359c  -4.65  -3.67  -1.29
+iter:   5 22:11:39 -1176.926013c  -5.24  -4.02c -1.79
+iter:   6 22:11:47 -1176.927362c  -5.45  -4.16c -1.87
+iter:   7 22:11:55 -1176.926360c  -5.69  -3.68  -1.93
+iter:   8 22:12:03 -1176.925655c  -5.60  -3.92  -2.20
+iter:   9 22:12:10 -1176.926117c  -6.19  -4.58c -2.16
+iter:  10 22:12:18 -1176.926018c  -6.14  -4.67c -2.18
+iter:  11 22:12:26 -1176.925661c  -6.86  -4.64c -2.50
+iter:  12 22:12:33 -1176.926055c  -6.66  -4.78c -3.70c
+iter:  13 22:12:41 -1176.926566c  -6.83  -4.59c -2.81
+iter:  14 22:12:49 -1176.926235c  -7.12  -4.41c -2.67
+iter:  15 22:12:56 -1176.926872c  -7.25  -4.46c -2.61
+iter:  16 22:13:04 -1176.925921c  -7.58c -4.42c -2.80
+iter:  17 22:13:12 -1176.926505c  -7.28  -4.44c -2.90
+iter:  18 22:13:20 -1176.926103c  -7.14  -4.39c -3.19c
+iter:  19 22:13:27 -1176.926584c  -7.38  -4.40c -3.14c
+iter:  20 22:13:35 -1176.925727c  -6.99  -4.32c -2.75
+iter:  21 22:13:43 -1176.926130c  -7.18  -4.68c -2.70
+iter:  22 22:13:50 -1176.926332c  -7.17  -4.76c -2.47
+iter:  23 22:13:58 -1176.925917c  -7.58c -4.76c -2.73
+iter:  24 22:14:06 -1176.925753c  -7.29  -4.99c -3.03c
+iter:  25 22:14:13 -1176.925734c  -7.80c -4.70c -3.03c
+
+Converged after 25 iterations.
+
+Dipole moment: (-8.984350, 0.740661, 28.765019) |e|*Ang
+
+Energy contributions relative to reference atoms: (reference = -124189.183028)
+
+Kinetic:       +1096.026283
+Potential:     -1127.422759
+External:        +0.000000
+XC:            -1168.776207
+Entropy (-ST):   +0.005383
+Local:          +22.943373
+Interactions  
+ surf:           +0.298192
+--------------------------
+Free energy:   -1176.925734
+Extrapolated:  -1176.925734
+
+Dipole-layer corrected work functions: 1.644495, 1.001501 eV
+
+Solvation cavity surface area: 259.64973
+Solvation cavity volume: not calculated (no calculator defined)
+
+Legendre-transformed energies (grand potential, Omega = E - N mu)
+ N (excess electrons):    +1.200841
+ mu (-workfunction, eV):   -1.001501
+ (Grand) free energy:   -1175.723090
+ (Grand) extrapolated:  -1175.723090
+
+Showing only first 2 kpts
+ Kpt  Band  Eigenvalues  Occupancy
+  0   252     -1.44308    1.66893
+  0   253     -1.35632    1.04042
+  0   254     -1.29616    0.62727
+  0   255     -1.21472    0.24535
+
+  1   252     -1.54315    2.10562
+  1   253     -1.51450    2.02616
+  1   254     -1.44175    1.66034
+  1   255     -1.41932    1.50814
+
+
+Fermi level: -1.32300
+
+No gap
+No difference between direct/indirect transitions
+
+Potential found to be 1.00150 V (with +1.20084 excess electrons, attempt 3/10).
+Slope regressed from last 4 attempts is -1.4841 V/electron,
+or apparent capacitance of 11.1120 muF/cm^2
+After mixing with 0.50, new slope is -1.5063 V/electron.
+Potential is within tolerance. Equilibrated.
+Grand-potential energy was written into results.
+
+
+Forces in eV/Ang:
+  0 C     0.00163   -0.13473   -0.97424
+  1 C    -0.00065   -0.61760    0.67927
+  2 C    -0.00310   -0.21136    0.30482
+  3 C    -0.00310    0.21136    0.30482
+  4 C     0.00167    0.62488    0.66115
+  5 C     0.00163    0.13473   -0.97424
+  6 C    -0.00163   -0.13473   -0.97424
+  7 C     0.00065   -0.61760    0.67927
+  8 C     0.00310   -0.21136    0.30482
+  9 C     0.00310    0.21136    0.30482
+ 10 C    -0.00167    0.62488    0.66115
+ 11 C    -0.00163    0.13473   -0.97424
+ 12 C    -0.00024   -0.13346   -0.97416
+ 13 C     0.00151   -0.60963    0.67445
+ 14 C     0.00162   -0.19985    0.34000
+ 15 C     0.00095    0.21504    0.33306
+ 16 C     0.00151    0.60963    0.67445
+ 17 C     0.00146    0.13899   -1.00057
+ 18 C     0.00024   -0.13346   -0.97416
+ 19 C    -0.00151   -0.60963    0.67445
+ 20 C    -0.00162   -0.19985    0.34000
+ 21 C    -0.00095    0.21504    0.33306
+ 22 C    -0.00151    0.60963    0.67445
+ 23 C    -0.00146    0.13899   -1.00057
+ 24 C     0.00146   -0.13899   -1.00057
+ 25 C     0.00167   -0.62488    0.66115
+ 26 C     0.00095   -0.21504    0.33306
+ 27 C     0.00162    0.19985    0.34000
+ 28 C    -0.00065    0.61760    0.67927
+ 29 C    -0.00024    0.13346   -0.97416
+ 30 C    -0.00146   -0.13899   -1.00057
+ 31 C    -0.00167   -0.62488    0.66115
+ 32 C    -0.00095   -0.21504    0.33306
+ 33 C    -0.00162    0.19985    0.34000
+ 34 C     0.00065    0.61760    0.67927
+ 35 C     0.00024    0.13346   -0.97416
+ 36 C     0.02768   -0.13103    0.22736
+ 37 C    -0.00267    0.01005   -0.19697
+ 38 C     0.00780    0.29431    0.08504
+ 39 C     0.00761   -0.12835    0.30219
+ 40 C    -0.00268   -0.01005   -0.19697
+ 41 C    -0.00716    0.16532    0.14327
+ 42 C    -0.02768   -0.13103    0.22736
+ 43 C     0.00268    0.01005   -0.19697
+ 44 C    -0.00780    0.29431    0.08503
+ 45 C    -0.00761   -0.12835    0.30218
+ 46 C     0.00268   -0.01005   -0.19697
+ 47 C     0.00716    0.16531    0.14327
+ 48 C    -0.00716   -0.16531    0.14327
+ 49 C    -0.00028    0.04410   -0.21557
+ 50 C     0.00761    0.12835    0.30218
+ 51 C     0.00780   -0.29431    0.08503
+ 52 C    -0.00364   -0.03280   -0.22422
+ 53 C     0.02768    0.13103    0.22736
+ 54 C     0.00716   -0.16532    0.14327
+ 55 C     0.00028    0.04409   -0.21557
+ 56 C    -0.00761    0.12835    0.30220
+ 57 C    -0.00780   -0.29431    0.08504
+ 58 C     0.00363   -0.03280   -0.22422
+ 59 C    -0.02768    0.13103    0.22736
+ 60 C     0.00052   -0.23975    0.08189
+ 61 C    -0.00364    0.03279   -0.22422
+ 62 C    -0.01085    0.26919    0.07944
+ 63 C    -0.01085   -0.26919    0.07944
+ 64 C    -0.00028   -0.04409   -0.21557
+ 65 C     0.00052    0.23975    0.08189
+ 66 C    -0.00053   -0.23975    0.08189
+ 67 C     0.00364    0.03280   -0.22422
+ 68 C     0.01085    0.26919    0.07943
+ 69 C     0.01085   -0.26919    0.07944
+ 70 C     0.00028   -0.04410   -0.21557
+ 71 C    -0.00053    0.23975    0.08190
+ 72 C     0.00668    0.48910    1.13371
+ 73 C    -0.07711    0.08507   -0.38453
+ 74 C     0.00425   -1.93829   -0.81962
+ 75 C    -0.02940    1.58557   -0.91485
+ 76 C     0.01918    0.20932   -0.22796
+ 77 C    -0.00310   -0.46342    0.91122
+ 78 C    -0.00668    0.48912    1.13370
+ 79 C     0.07711    0.08507   -0.38452
+ 80 C    -0.00425   -1.93828   -0.81961
+ 81 C     0.02940    1.58557   -0.91483
+ 82 C    -0.01917    0.20933   -0.22796
+ 83 C     0.00310   -0.46343    0.91123
+ 84 C     0.49767    0.51922    0.53626
+ 85 C     0.01917   -0.20933   -0.22796
+ 86 C    -0.20773   -1.62046   -0.62543
+ 87 C    -0.20773    1.62047   -0.62542
+ 88 C    -0.07711   -0.08507   -0.38452
+ 89 C     0.49767   -0.51921    0.53627
+ 90 C    -0.49767    0.51921    0.53628
+ 91 C    -0.01918   -0.20932   -0.22796
+ 92 C     0.20773   -1.62047   -0.62542
+ 93 C     0.20774    1.62045   -0.62543
+ 94 C     0.07711   -0.08508   -0.38453
+ 95 C    -0.49767   -0.51922    0.53626
+ 96 C    -0.00310    0.46343    0.91122
+ 97 C     0.00482   -0.02800   -0.11511
+ 98 C    -0.02940   -1.58557   -0.91483
+ 99 C     0.00425    1.93828   -0.81961
+100 C     0.00482    0.02800   -0.11511
+101 C     0.00668   -0.48912    1.13370
+102 C     0.00310    0.46342    0.91122
+103 C    -0.00482   -0.02800   -0.11511
+104 C     0.02940   -1.58557   -0.91485
+105 C    -0.00426    1.93829   -0.81962
+106 C    -0.00482    0.02800   -0.11511
+107 C    -0.00668   -0.48910    1.13371
+108 C    -0.07277    0.17860    0.35340
+109 C    -0.47555   -0.18578    0.35610
+110 C    -0.09542   -0.01090    1.53983
+111 H     0.00005   -0.18661   -0.18823
+112 H    -0.00029    0.19193   -0.19179
+113 H    -0.00005   -0.18661   -0.18823
+114 H     0.00029    0.19193   -0.19179
+115 H    -0.00040   -0.17537   -0.19600
+116 H    -0.00040    0.17538   -0.19600
+117 H     0.00040   -0.17538   -0.19600
+118 H     0.00040    0.17538   -0.19600
+119 H    -0.00029   -0.19193   -0.19179
+120 H     0.00005    0.18661   -0.18823
+121 H     0.00029   -0.19193   -0.19179
+122 H    -0.00005    0.18661   -0.18823
+123 H    -0.00111   -0.17808   -0.05808
+124 H    -0.00304    0.19366   -0.04933
+125 H     0.00111   -0.17808   -0.05807
+126 H     0.00305    0.19368   -0.04930
+127 H     0.08215   -0.19731   -0.00613
+128 H     0.08215    0.19734   -0.00610
+129 H    -0.08215   -0.19734   -0.00610
+130 H    -0.08215    0.19731   -0.00614
+131 H    -0.00304   -0.19368   -0.04930
+132 H    -0.00111    0.17808   -0.05807
+133 H     0.00304   -0.19366   -0.04933
+134 H     0.00111    0.17808   -0.05808
+135 H    -0.00961    0.04146   -0.01691
+136 H     0.15697    0.00199   -0.02566
+137 H    -0.08959   -0.03173   -0.01390
+138 H    -0.04800   -0.00483   -0.02869
+139 Li   -0.00000   -0.00000    0.63201
+140 Li   -0.00000   -0.00000    0.63446
+141 Li    0.00000   -0.00148    0.63618
+142 Li   -0.00000   -0.00228    0.63815
+143 Li   -0.00000    0.00148    0.63618
+144 Li    0.00000    0.00228    0.63815
+145 Li   -0.00000    0.00426   -0.03787
+146 Li    0.00000    0.00114   -0.04750
+147 Li    0.00000   -0.00426   -0.03787
+148 Li   -0.00000   -0.00114   -0.04750
+149 Li    0.00000    0.00000   -0.06519
+150 Li    0.00000   -0.00000   -0.06175
+151 Li   -0.00000    0.00555    0.00590
+152 Li    0.00000   -0.00192    0.01068
+153 Li    0.00000    0.00000    0.00035
+154 Li    0.00000   -0.00555    0.00590
+155 Li   -0.00000    0.00192    0.01068
+156 Li   -0.00000   -0.00000    0.50516
+157 O    -0.00154    0.00751   -0.91899
+158 O     0.14186    0.25199   -0.56886
+159 O    -0.42852   -0.16669   -0.60137
+
+Writing to graphite.gpw (mode='')
+
+Timing:                                       incl.     excl.
+--------------------------------------------------------------------
+Forces:                                       2.621     2.621   0.2% |
+Hamiltonian:                                  5.345     2.631   0.2% |
+ Atomic:                                      0.012     0.001   0.0% |
+  XC Correction:                              0.011     0.011   0.0% |
+ Hartree integrate/restrict:                  0.002     0.002   0.0% |
+ Initialize Hamiltonian:                      0.007     0.007   0.0% |
+ Poisson:                                     2.651     2.651   0.2% |
+ XC 3D grid:                                  0.041     0.041   0.0% |
+ vbar:                                        0.000     0.000   0.0% |
+HirshfeldPartitioning initialize:             0.461     0.461   0.0% |
+LCAO initialization:                          3.010     0.041   0.0% |
+ LCAO eigensolver:                            1.076     0.002   0.0% |
+  Calculate projections:                      0.000     0.000   0.0% |
+  DenseAtomicCorrection:                      0.000     0.000   0.0% |
+  Distribute overlap matrix:                  0.330     0.330   0.0% |
+  Orbital Layouts:                            0.732     0.732   0.1% |
+  Potential matrix:                           0.000     0.000   0.0% |
+  Sum over cells:                             0.011     0.011   0.0% |
+ LCAO to grid:                                1.417     1.417   0.1% |
+ Set positions (LCAO WFS):                    0.475     0.337   0.0% |
+  Basic WFS set positions:                    0.002     0.002   0.0% |
+  Basis functions set positions:              0.000     0.000   0.0% |
+  P tci:                                      0.000     0.000   0.0% |
+  ST tci:                                     0.027     0.027   0.0% |
+  mktci:                                      0.108     0.108   0.0% |
+Potential equilibration loop:               869.525     0.047   0.0% |
+ Density initialized from wave functions:     0.052     0.052   0.0% |
+  Symmetrize density:                         0.000     0.000   0.0% |
+ Hamiltonian:                                 3.685     0.031   0.0% |
+  Atomic:                                     0.034     0.001   0.0% |
+   XC Correction:                             0.034     0.034   0.0% |
+  Hartree integrate/restrict:                 0.006     0.006   0.0% |
+  Poisson:                                    3.592     3.592   0.3% |
+  XC 3D grid:                                 0.021     0.021   0.0% |
+  vbar:                                       0.000     0.000   0.0% |
+ SCF-cycle:                                 865.741     0.135   0.0% |
+  Davidson:                                 805.135   137.561  11.6% |----|
+   Apply hamiltonian:                        24.658    24.658   2.1% ||
+   Subspace diag:                           103.730     0.032   0.0% |
+    calc_h_matrix:                           46.461    22.905   1.9% ||
+     Apply hamiltonian:                      23.556    23.556   2.0% ||
+    diagonalize:                             14.160    14.160   1.2% |
+    rotate_psi:                              43.077    43.077   3.6% ||
+   calc. matrices:                          239.955   171.604  14.4% |-----|
+    Apply hamiltonian:                       68.351    68.351   5.7% |-|
+   diagonalize:                             216.423   216.423  18.2% |------|
+   rotate_psi:                               82.809    82.809   7.0% |--|
+  Density:                                    2.098     0.001   0.0% |
+   Atomic density matrices:                   0.437     0.437   0.0% |
+   Mix:                                       0.382     0.382   0.0% |
+   Multipole moments:                         0.024     0.024   0.0% |
+   Pseudo density:                            1.254     1.253   0.1% |
+    Symmetrize density:                       0.001     0.001   0.0% |
+  Hamiltonian:                               58.374     1.183   0.1% |
+   Atomic:                                    1.235     0.033   0.0% |
+    XC Correction:                            1.202     1.202   0.1% |
+   Hartree integrate/restrict:                0.203     0.203   0.0% |
+   Poisson:                                  54.849    54.849   4.6% |-|
+   XC 3D grid:                                0.889     0.889   0.1% |
+   vbar:                                      0.014     0.014   0.0% |
+SCF-cycle:                                  303.030     0.094   0.0% |
+ Davidson:                                  275.845    47.279   4.0% |-|
+  Apply hamiltonian:                          8.594     8.594   0.7% |
+  Subspace diag:                             35.783     0.011   0.0% |
+   calc_h_matrix:                            15.991     7.948   0.7% |
+    Apply hamiltonian:                        8.043     8.043   0.7% |
+   diagonalize:                               5.190     5.190   0.4% |
+   rotate_psi:                               14.591    14.591   1.2% |
+  calc. matrices:                            82.273    59.082   5.0% |-|
+   Apply hamiltonian:                        23.191    23.191   1.9% ||
+  diagonalize:                               73.671    73.671   6.2% |-|
+  rotate_psi:                                28.245    28.245   2.4% ||
+ Density:                                     0.778     0.000   0.0% |
+  Atomic density matrices:                    0.156     0.156   0.0% |
+  Mix:                                        0.169     0.169   0.0% |
+  Multipole moments:                          0.029     0.029   0.0% |
+  Pseudo density:                             0.424     0.424   0.0% |
+   Symmetrize density:                        0.000     0.000   0.0% |
+ Hamiltonian:                                25.752     0.349   0.0% |
+  Atomic:                                     0.419     0.012   0.0% |
+   XC Correction:                             0.407     0.407   0.0% |
+  Hartree integrate/restrict:                 0.067     0.067   0.0% |
+  Poisson:                                   24.595    24.595   2.1% ||
+  XC 3D grid:                                 0.316     0.316   0.0% |
+  vbar:                                       0.005     0.005   0.0% |
+ Orthonormalize:                              0.561     0.000   0.0% |
+  calc_s_matrix:                              0.094     0.094   0.0% |
+  inverse-cholesky:                           0.286     0.286   0.0% |
+  projections:                                0.000     0.000   0.0% |
+  rotate_psi_s:                               0.181     0.181   0.0% |
+Set symmetry:                                 0.001     0.001   0.0% |
+Other:                                        6.202     6.202   0.5% |
+--------------------------------------------------------------------
+Total:                                               1190.194 100.0%
+
+Memory usage: 571.93 MiB
+Date: Thu Jul  9 22:14:22 2026
